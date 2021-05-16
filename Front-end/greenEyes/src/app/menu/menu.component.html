@@ -13,18 +13,15 @@
 
     <!-- Center elements -->
     <!-- Pesquisar -->
-    <form class="">
-      <div class="p-1 bg-light shadow-sm mb-4 w-px rounded-pill">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <button id="button-addon2" type="submit" class="btn btn-link text-warning rounded-pill"><i class="fa fa-search text-secondary rounded-pill"></i></button>
-          </div>
-          <input type="search" placeholder="Buscar produtos, categorias..." aria-describedby="button-addon2" class="form-control border-0 bg-light rounded-pill">
+    <div class="p-1 bg-light shadow-sm mb-4 w-px rounded-pill">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button id="button-addon2" type="submit" (click)="pesquisar()" class="btn btn-link text-warning rounded-pill"><i class="fa fa-search text-secondary rounded-pill"></i></button>
         </div>
+        <input type="search" [(ngModel)]="valorPesquisa" placeholder="Buscar produtos, categorias..." aria-describedby="button-addon2" class="form-control border-0 bg-light rounded-pill">
       </div>
+    </div>
 
-
-    </form>
     <!-- Center elements -->
 
     <!-- Right elements -->
@@ -32,34 +29,21 @@
 
       <li class="nav-item dropdown me-3 me-lg-1">
         <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"aria-expanded="false">
-        <mat-icon>favorite</mat-icon>
+        <mat-icon class="ico-fav">favorite</mat-icon>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Some news</a></li>
-          <li><a class="dropdown-item" href="#">Another news</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
       </li>
       <li class="nav-item dropdown me-3 me-lg-1">
         <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon class="ico-car-user">shopping_cart</mat-icon>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Some news</a></li>
-          <li><a class="dropdown-item" href="#">Another news</a></li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-        </ul>
       </li>
       <li class="nav-item dropdown me-3 me-lg-1">
         <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-          <mat-icon>person</mat-icon>
+          <mat-icon class="ico-car-user">person</mat-icon>
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-        <li><a class="dropdown-item" href="#">My profile</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Logout</a></li>
+        <li><a class="dropdown-item" >Meu Perfil</a></li> <!-- [routerLink]="['/user-edit', id]" -->
+        <li><a class="dropdown-item" routerLink="/login">Sair</a></li>
         </ul>
       </li>
     </ul>
@@ -74,12 +58,8 @@
     <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button" routerLink="/home">Home</button>
     <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button" routerLink="/categoria">Categorias</button>
     <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button" routerLink="/produto">Produtos</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Categoria</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Categoria</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Categoria</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Categoria</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Sobre nós</button>
-    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Contato</button>
+    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button" routerLink="/sobre-nos">Sobre nós</button>
+    <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button" routerLink="/contato">Contato</button>
     <button class="btn btn-sm btn-outline-secondary me-2 bmenu2" type="button">Blog</button>
   </form>
 </nav>
